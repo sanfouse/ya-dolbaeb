@@ -4,6 +4,9 @@ from loader import dp
 from keyboards.user.inline import start_keyboard, menu_keyboard
 
 
+### СПЕЦИАЛЬНО ДЛЯ ПРОФКОМА, КОД ЗАЛУПЫ
+
+
 texts = {
     '0': 'Здравствуй, дорогой первокурскик, рады тебя видеть в стенах нашего вуза. Эти кнопочки помогут тебе быстрее освоится в вузе, всего тебе хорошего!!!',
     '1': """
@@ -96,17 +99,12 @@ fresgas@guap.ru, (812)371-64-35
 dept4g@aanet.ru, (812)708-39-43
 Гастелло 15,ауд.13-06
 
-
-
-
-
 Институт ФПТИ:
 Директор - Фролова Елена Александровна dek_ibmp@guap.ru, (812)494-70-55,(812)708-
 38-59
 Б.Морская67,ауд.23-21;
 Заместитель директора по младшим курсам - Пушкина Вера Павловна (812)708-38-59
 Гастелло 15,ауд.13-01
-
 
 Гуманитарный факультет (6 факультет)
 Декан - Лосев Константин Викторович losev@guap.ru, (812)494-70-61,(812)373-20-02
@@ -163,7 +161,7 @@ async def start(message: types.Message) -> None:
     await message.answer(texts['0'], reply_markup=await start_keyboard())
 
 
-@dp.message_handler(lambda m: m.text == 'профком хуйня')
+@dp.message_handler(lambda m: m.text.lower() == 'профком хуйня')
 async def true(message: types.Message):
     await message.answer('Верно мыслишь, дорогой!')
 
