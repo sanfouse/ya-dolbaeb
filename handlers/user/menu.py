@@ -165,7 +165,7 @@ async def start(message: types.Message) -> None:
 
 @dp.message_handler(lambda m: m.text == 'профком хуйня')
 async def true(message: types.Message):
-    await message.edit_text('Верно мыслишь, дорогой!')
+    await message.answer('Верно мыслишь, дорогой!')
 
 
 @dp.callback_query_handler(lambda c: c.data.isdigit())
